@@ -38,15 +38,6 @@
   </url>
   
   <url>
-    <loc>https://luoguang.github.io/page/2020/03/29/design-blog/</loc>
-    
-    <lastmod>2026-10-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://luoguang.github.io/page/2026/10/14/markdown-writing-guide/</loc>
     
     <lastmod>2026-10-14</lastmod>
@@ -82,13 +73,6 @@
   
   <url>
     <loc>https://luoguang.github.io/page/tags/NexT/</loc>
-    <lastmod>2026-10-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://luoguang.github.io/page/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/</loc>
     <lastmod>2026-10-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
