@@ -65,7 +65,21 @@
 
   
   <url>
+    <loc>https://luoguang.github.io/page/tags/Markdown/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://luoguang.github.io/page/tags/Hexo/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://luoguang.github.io/page/tags/%E5%86%99%E4%BD%9C%E8%A7%84%E8%8C%83/</loc>
     <lastmod>2026-10-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -87,20 +101,6 @@
   
   <url>
     <loc>https://luoguang.github.io/page/tags/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
-    <lastmod>2026-10-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://luoguang.github.io/page/tags/Markdown/</loc>
-    <lastmod>2026-10-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://luoguang.github.io/page/tags/%E5%86%99%E4%BD%9C%E8%A7%84%E8%8C%83/</loc>
     <lastmod>2026-10-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

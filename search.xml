@@ -1,6 +1,230 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Markdown 写作与排版规范</title>
+    <url>/page/2026/10/14/markdown-writing-guide/</url>
+    <content><![CDATA[<p>本篇既是<strong>排版示范</strong>，也是本站的写作参考：从 front-matter 到标题层级、列表、引用、代码、表格、图片与 emoji，按这个模板写，任何一篇文章的版式都能保持一致。 🎯</p>
+<span id="more"></span>
+
+<h2 id="一、front-matter"><a href="#一、front-matter" class="headerlink" title="一、front-matter"></a>一、front-matter</h2><p>每篇文章顶部的 YAML 区块，决定了标题、归档、标签与 SEO 信息：</p>
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">title</span><span class="token punctuation">:</span> Markdown 写作与排版规范
+<span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2026-10-14 10:30:00</span>
+<span class="token key atrule">updated</span><span class="token punctuation">:</span> <span class="token datetime number">2026-10-14 10:30:00</span>
+<span class="token key atrule">categories</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> 教程
+<span class="token key atrule">tags</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> Markdown
+<span class="token key atrule">description</span><span class="token punctuation">:</span> 一句话摘要，用于 SEO 与列表页。
+<span class="token key atrule">keywords</span><span class="token punctuation">:</span>
+  <span class="token punctuation">-</span> Markdown
+  <span class="token punctuation">-</span> Hexo<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>字段说明：</p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>必填</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>title</code></td>
+<td>是</td>
+<td>文章标题，同时决定 URL 与页面 <code>&lt;h1&gt;</code></td>
+</tr>
+<tr>
+<td><code>date</code></td>
+<td>是</td>
+<td>发布时间，决定归档目录；缺失会被生成到错误日期目录</td>
+</tr>
+<tr>
+<td><code>updated</code></td>
+<td>否</td>
+<td>最后更新时间，NexT 显示在标题下方</td>
+</tr>
+<tr>
+<td><code>categories</code></td>
+<td>否</td>
+<td>分类，<strong>有层级</strong>，一篇文章建议只用一个</td>
+</tr>
+<tr>
+<td><code>tags</code></td>
+<td>否</td>
+<td>标签，平级，可多个</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>否</td>
+<td>摘要，用于 SEO 描述</td>
+</tr>
+<tr>
+<td><code>keywords</code></td>
+<td>否</td>
+<td>关键词列表</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><code>categories</code> 与 <code>tags</code> 的区别：分类是树（如「教程 &gt; Hexo」），标签是云。分类用列表缩进表示层级。</p>
+</blockquote>
+<h2 id="二、标题层级"><a href="#二、标题层级" class="headerlink" title="二、标题层级"></a>二、标题层级</h2><p>正文统一从 <code>##</code> 开始，<code>#</code> 留给文章标题本身（它由 <code>title</code> 自动生成）。层级建议不超过四级：</p>
+<ul>
+<li><code>##</code> 一级章节</li>
+<li><code>###</code> 章节下的小节</li>
+<li><code>####</code> 再下一层，通常够用</li>
+</ul>
+<h3 id="2-1-小节示例"><a href="#2-1-小节示例" class="headerlink" title="2.1 小节示例"></a>2.1 小节示例</h3><p>标题里不要嵌套 Markdown 语法，末尾也不加标点——目录（<code>toc</code>）会原样收录标题文字。</p>
+<h2 id="三、正文排版"><a href="#三、正文排版" class="headerlink" title="三、正文排版"></a>三、正文排版</h2><h3 id="段落与强调"><a href="#段落与强调" class="headerlink" title="段落与强调"></a>段落与强调</h3><p>段落之间空一行。<strong>加粗</strong>表示重点，<em>斜体</em>表示次要强调，<code>行内代码</code>用于命令、文件名与配置键。</p>
+<p>中英文之间留一个空格：本站使用 Hexo 8 与 NexT 主题，站点配置写在 <code>_config.yml</code>，主题配置写在 <code>_config.next.yml</code>。</p>
+<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><p>无序列表用 <code>-</code>：</p>
+<ul>
+<li>项目一</li>
+<li>项目二<ul>
+<li>嵌套项缩进两个空格</li>
+</ul>
+</li>
+</ul>
+<p>有序列表用数字，适合写步骤：</p>
+<ol>
+<li>先执行 <code>npm run clean</code></li>
+<li>再执行 <code>npm run build</code></li>
+<li>最后上传 <code>public/</code> 目录</li>
+</ol>
+<p>任务列表用于记录进度：</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 完成环境搭建</li>
+<li><input disabled="" type="checkbox"> 绑定自定义域名</li>
+</ul>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><blockquote>
+<p>引用块用来放结论、注意事项或引用他人内容。<br>连续多行时，每行前都要加 <code>&gt;</code>。</p>
+</blockquote>
+<h3 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h3><p>两个章节之间需要明显分隔时，单独一行写 <code>---</code>。</p>
+<hr>
+<h2 id="四、代码块"><a href="#四、代码块" class="headerlink" title="四、代码块"></a>四、代码块</h2><p>代码块<strong>必须标注语言</strong>，否则不会高亮。行号由 <code>prismjs.line_number</code> 全局开启，无需额外配置：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> run server          <span class="token comment"># 本地预览</span>
+<span class="token function">npm</span> run build           <span class="token comment"># 生成静态文件</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">relative_link</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>     <span class="token comment"># _config.yml：生成相对路径</span>
+<span class="token key atrule">cache</span><span class="token punctuation">:</span>                  <span class="token comment"># _config.next.yml：与 relative_link 互斥</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+fs<span class="token punctuation">.</span><span class="token function">writeFileSync</span><span class="token punctuation">(</span><span class="token string">'out.txt'</span><span class="token punctuation">,</span> <span class="token string">'Hello Hexo'</span><span class="token punctuation">,</span> <span class="token string">'utf8'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>需要在文中展示「代码块本身」时，用四个反引号包裹三个反引号：</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token code"><span class="token punctuation">```</span><span class="token code-language">yaml</span>
+<span class="token code-block language-yaml"><span class="token key atrule">theme</span><span class="token punctuation">:</span> next</span>
+<span class="token punctuation">```</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="五、表格"><a href="#五、表格" class="headerlink" title="五、表格"></a>五、表格</h2><p>表格适合放参数、对照与清单，对齐用第二行的冒号控制：</p>
+<table>
+<thead>
+<tr>
+<th>元素</th>
+<th align="center">语法</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>链接</td>
+<td align="center"><code>[文字](https://example.com)</code></td>
+<td>站内用相对路径，站外用绝对 URL</td>
+</tr>
+<tr>
+<td>图片</td>
+<td align="center"><code>![说明](路径)</code></td>
+<td>见下一节</td>
+</tr>
+<tr>
+<td>任务</td>
+<td align="center"><code>- [x]</code></td>
+<td>记录完成状态</td>
+</tr>
+</tbody></table>
+<h2 id="六、图片与附件"><a href="#六、图片与附件" class="headerlink" title="六、图片与附件"></a>六、图片与附件</h2><p>站点开启了 <code>post_asset_folder: true</code>，每篇文章可以有同名资源目录，图片放进去后用相对路径引用：</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token url"><span class="token operator">!</span>[<span class="token content">示意图</span>](<span class="token url">cover.png</span>)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>公共图片放在 <code>source/images/</code>，用站点路径引用：</p>
+<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token url"><span class="token operator">!</span>[<span class="token content">站点 Logo</span>](<span class="token url">/images/logo.svg</span>)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p>建议：截图类图片 alt 文字写清「这是什么」，便于搜索与无障碍阅读；大图先压缩再上传。</p>
+</blockquote>
+<h2 id="七、Emoji"><a href="#七、Emoji" class="headerlink" title="七、Emoji"></a>七、Emoji</h2><p>直接输入字符与短代码等价，两种都可以用：</p>
+<table>
+<thead>
+<tr>
+<th>写法</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>🎉</code></td>
+<td>🎉</td>
+</tr>
+<tr>
+<td><code>&lt;span class=&quot;github-emoji&quot; alias=&quot;tada&quot; style=&quot;height: 1.2em; width: 1.2em; vertical-align: middle&quot; fallback-src=&quot;https://github.githubassets.com/images/icons/emoji/unicode/1f389.png?v8&quot;&gt;&amp;#x1f389;&lt;/span&gt;</code></td>
+<td><span class="github-emoji" alias="tada" style="height: 1.2em; width: 1.2em; vertical-align: middle" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f389.png?v8">&#x1f389;</span></td>
+</tr>
+<tr>
+<td><code>&#123;% emoji sparkles %&#125;</code></td>
+<td><span class="github-emoji" alias="sparkles" style="height: 1.2em; width: 1.2em; vertical-align: middle" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2728.png?v8">&#x2728;</span></td>
+</tr>
+</tbody></table>
+<p>自定义表情包：把图片放到 <code>source/images/emoji/</code>，在 <code>_config.yml</code> 的 <code>emoji.customEmojis</code> 中登记，之后就能用 <code>:doge:</code> 引用。</p>
+<p>标题里不建议放 emoji，正文中点缀即可。</p>
+<h2 id="八、常见错误"><a href="#八、常见错误" class="headerlink" title="八、常见错误"></a>八、常见错误</h2><table>
+<thead>
+<tr>
+<th>错误写法</th>
+<th>问题</th>
+<th>正确做法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>正文用 <code>#</code> 标题</td>
+<td>与文章标题重复，目录层级混乱</td>
+<td>正文从 <code>##</code> 开始</td>
+</tr>
+<tr>
+<td>代码块不标语言</td>
+<td>不会高亮，阅读吃力</td>
+<td>标注 <code>bash</code>、<code>yaml</code>、<code>js</code> 等</td>
+</tr>
+<tr>
+<td>front-matter 缺 <code>date</code></td>
+<td>文章被生成到错误日期目录</td>
+<td>补上 <code>date</code></td>
+</tr>
+<tr>
+<td>中英文不加空格</td>
+<td>排版拥挤</td>
+<td>中英文之间留一个空格</td>
+</tr>
+<tr>
+<td>用记事本保存 md</td>
+<td>默认 ANSI 编码，中文与 emoji 乱码</td>
+<td>用 VS Code 等编辑器保存为 UTF-8</td>
+</tr>
+</tbody></table>
+<h2 id="九、小结"><a href="#九、小结" class="headerlink" title="九、小结"></a>九、小结</h2><ul>
+<li>front-matter 写全，尤其别漏 <code>date</code></li>
+<li>正文从 <code>##</code> 起，层级不超过四级</li>
+<li>代码块标注语言，表格用标准语法</li>
+<li>中文与英文之间留空格，文件统一 UTF-8</li>
+</ul>
+<p>照这个模板写，文章在 NexT 的 Pisces 布局下会自动获得目录、代码高亮、行号与一致的行距。 🎉</p>
+]]></content>
+      <categories>
+        <category>教程</category>
+      </categories>
+      <tags>
+        <tag>Markdown</tag>
+        <tag>Hexo</tag>
+        <tag>写作规范</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo 博客使用指南：从环境搭建到写作与发布</title>
     <url>/page/2026/10/16/hexo-blog-guide/</url>
     <content><![CDATA[<p>这是一篇写给「未来的自己」的操作手册：换新机器时照着第二节装环境，日常写作照第三节，写完整站生成与发布看第四节，手上有一堆 Word &#x2F; 文本笔记要搬上博客时看第五节。 🎯</p>
@@ -299,230 +523,6 @@ npm run deploy<span aria-hidden="true" class="line-numbers-rows"><span></span><s
         <tag>NexT</tag>
         <tag>GitHub Pages</tag>
         <tag>博客搭建</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Markdown 写作与排版规范</title>
-    <url>/page/2026/10/14/markdown-writing-guide/</url>
-    <content><![CDATA[<p>本篇既是<strong>排版示范</strong>，也是本站的写作参考：从 front-matter 到标题层级、列表、引用、代码、表格、图片与 emoji，按这个模板写，任何一篇文章的版式都能保持一致。 🎯</p>
-<span id="more"></span>
-
-<h2 id="一、front-matter"><a href="#一、front-matter" class="headerlink" title="一、front-matter"></a>一、front-matter</h2><p>每篇文章顶部的 YAML 区块，决定了标题、归档、标签与 SEO 信息：</p>
-<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">title</span><span class="token punctuation">:</span> Markdown 写作与排版规范
-<span class="token key atrule">date</span><span class="token punctuation">:</span> <span class="token datetime number">2026-10-14 10:30:00</span>
-<span class="token key atrule">updated</span><span class="token punctuation">:</span> <span class="token datetime number">2026-10-14 10:30:00</span>
-<span class="token key atrule">categories</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> 教程
-<span class="token key atrule">tags</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> Markdown
-<span class="token key atrule">description</span><span class="token punctuation">:</span> 一句话摘要，用于 SEO 与列表页。
-<span class="token key atrule">keywords</span><span class="token punctuation">:</span>
-  <span class="token punctuation">-</span> Markdown
-  <span class="token punctuation">-</span> Hexo<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>字段说明：</p>
-<table>
-<thead>
-<tr>
-<th>字段</th>
-<th>必填</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>title</code></td>
-<td>是</td>
-<td>文章标题，同时决定 URL 与页面 <code>&lt;h1&gt;</code></td>
-</tr>
-<tr>
-<td><code>date</code></td>
-<td>是</td>
-<td>发布时间，决定归档目录；缺失会被生成到错误日期目录</td>
-</tr>
-<tr>
-<td><code>updated</code></td>
-<td>否</td>
-<td>最后更新时间，NexT 显示在标题下方</td>
-</tr>
-<tr>
-<td><code>categories</code></td>
-<td>否</td>
-<td>分类，<strong>有层级</strong>，一篇文章建议只用一个</td>
-</tr>
-<tr>
-<td><code>tags</code></td>
-<td>否</td>
-<td>标签，平级，可多个</td>
-</tr>
-<tr>
-<td><code>description</code></td>
-<td>否</td>
-<td>摘要，用于 SEO 描述</td>
-</tr>
-<tr>
-<td><code>keywords</code></td>
-<td>否</td>
-<td>关键词列表</td>
-</tr>
-</tbody></table>
-<blockquote>
-<p><code>categories</code> 与 <code>tags</code> 的区别：分类是树（如「教程 &gt; Hexo」），标签是云。分类用列表缩进表示层级。</p>
-</blockquote>
-<h2 id="二、标题层级"><a href="#二、标题层级" class="headerlink" title="二、标题层级"></a>二、标题层级</h2><p>正文统一从 <code>##</code> 开始，<code>#</code> 留给文章标题本身（它由 <code>title</code> 自动生成）。层级建议不超过四级：</p>
-<ul>
-<li><code>##</code> 一级章节</li>
-<li><code>###</code> 章节下的小节</li>
-<li><code>####</code> 再下一层，通常够用</li>
-</ul>
-<h3 id="2-1-小节示例"><a href="#2-1-小节示例" class="headerlink" title="2.1 小节示例"></a>2.1 小节示例</h3><p>标题里不要嵌套 Markdown 语法，末尾也不加标点——目录（<code>toc</code>）会原样收录标题文字。</p>
-<h2 id="三、正文排版"><a href="#三、正文排版" class="headerlink" title="三、正文排版"></a>三、正文排版</h2><h3 id="段落与强调"><a href="#段落与强调" class="headerlink" title="段落与强调"></a>段落与强调</h3><p>段落之间空一行。<strong>加粗</strong>表示重点，<em>斜体</em>表示次要强调，<code>行内代码</code>用于命令、文件名与配置键。</p>
-<p>中英文之间留一个空格：本站使用 Hexo 8 与 NexT 主题，站点配置写在 <code>_config.yml</code>，主题配置写在 <code>_config.next.yml</code>。</p>
-<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><p>无序列表用 <code>-</code>：</p>
-<ul>
-<li>项目一</li>
-<li>项目二<ul>
-<li>嵌套项缩进两个空格</li>
-</ul>
-</li>
-</ul>
-<p>有序列表用数字，适合写步骤：</p>
-<ol>
-<li>先执行 <code>npm run clean</code></li>
-<li>再执行 <code>npm run build</code></li>
-<li>最后上传 <code>public/</code> 目录</li>
-</ol>
-<p>任务列表用于记录进度：</p>
-<ul>
-<li><input checked="" disabled="" type="checkbox"> 完成环境搭建</li>
-<li><input disabled="" type="checkbox"> 绑定自定义域名</li>
-</ul>
-<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><blockquote>
-<p>引用块用来放结论、注意事项或引用他人内容。<br>连续多行时，每行前都要加 <code>&gt;</code>。</p>
-</blockquote>
-<h3 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h3><p>两个章节之间需要明显分隔时，单独一行写 <code>---</code>。</p>
-<hr>
-<h2 id="四、代码块"><a href="#四、代码块" class="headerlink" title="四、代码块"></a>四、代码块</h2><p>代码块<strong>必须标注语言</strong>，否则不会高亮。行号由 <code>prismjs.line_number</code> 全局开启，无需额外配置：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> run server          <span class="token comment"># 本地预览</span>
-<span class="token function">npm</span> run build           <span class="token comment"># 生成静态文件</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">relative_link</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>     <span class="token comment"># _config.yml：生成相对路径</span>
-<span class="token key atrule">cache</span><span class="token punctuation">:</span>                  <span class="token comment"># _config.next.yml：与 relative_link 互斥</span>
-  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-fs<span class="token punctuation">.</span><span class="token function">writeFileSync</span><span class="token punctuation">(</span><span class="token string">'out.txt'</span><span class="token punctuation">,</span> <span class="token string">'Hello Hexo'</span><span class="token punctuation">,</span> <span class="token string">'utf8'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>需要在文中展示「代码块本身」时，用四个反引号包裹三个反引号：</p>
-<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token code"><span class="token punctuation">```</span><span class="token code-language">yaml</span>
-<span class="token code-block language-yaml"><span class="token key atrule">theme</span><span class="token punctuation">:</span> next</span>
-<span class="token punctuation">```</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="五、表格"><a href="#五、表格" class="headerlink" title="五、表格"></a>五、表格</h2><p>表格适合放参数、对照与清单，对齐用第二行的冒号控制：</p>
-<table>
-<thead>
-<tr>
-<th>元素</th>
-<th align="center">语法</th>
-<th>用途</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>链接</td>
-<td align="center"><code>[文字](https://example.com)</code></td>
-<td>站内用相对路径，站外用绝对 URL</td>
-</tr>
-<tr>
-<td>图片</td>
-<td align="center"><code>![说明](路径)</code></td>
-<td>见下一节</td>
-</tr>
-<tr>
-<td>任务</td>
-<td align="center"><code>- [x]</code></td>
-<td>记录完成状态</td>
-</tr>
-</tbody></table>
-<h2 id="六、图片与附件"><a href="#六、图片与附件" class="headerlink" title="六、图片与附件"></a>六、图片与附件</h2><p>站点开启了 <code>post_asset_folder: true</code>，每篇文章可以有同名资源目录，图片放进去后用相对路径引用：</p>
-<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token url"><span class="token operator">!</span>[<span class="token content">示意图</span>](<span class="token url">cover.png</span>)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>公共图片放在 <code>source/images/</code>，用站点路径引用：</p>
-<pre class="line-numbers language-markdown" data-language="markdown"><code class="language-markdown"><span class="token url"><span class="token operator">!</span>[<span class="token content">站点 Logo</span>](<span class="token url">/images/logo.svg</span>)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<blockquote>
-<p>建议：截图类图片 alt 文字写清「这是什么」，便于搜索与无障碍阅读；大图先压缩再上传。</p>
-</blockquote>
-<h2 id="七、Emoji"><a href="#七、Emoji" class="headerlink" title="七、Emoji"></a>七、Emoji</h2><p>直接输入字符与短代码等价，两种都可以用：</p>
-<table>
-<thead>
-<tr>
-<th>写法</th>
-<th>效果</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>🎉</code></td>
-<td>🎉</td>
-</tr>
-<tr>
-<td><code>&lt;span class=&quot;github-emoji&quot; alias=&quot;tada&quot; style=&quot;height: 1.2em; width: 1.2em; vertical-align: middle&quot; fallback-src=&quot;https://github.githubassets.com/images/icons/emoji/unicode/1f389.png?v8&quot;&gt;&amp;#x1f389;&lt;/span&gt;</code></td>
-<td><span class="github-emoji" alias="tada" style="height: 1.2em; width: 1.2em; vertical-align: middle" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f389.png?v8">&#x1f389;</span></td>
-</tr>
-<tr>
-<td><code>&#123;% emoji sparkles %&#125;</code></td>
-<td><span class="github-emoji" alias="sparkles" style="height: 1.2em; width: 1.2em; vertical-align: middle" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2728.png?v8">&#x2728;</span></td>
-</tr>
-</tbody></table>
-<p>自定义表情包：把图片放到 <code>source/images/emoji/</code>，在 <code>_config.yml</code> 的 <code>emoji.customEmojis</code> 中登记，之后就能用 <code>:doge:</code> 引用。</p>
-<p>标题里不建议放 emoji，正文中点缀即可。</p>
-<h2 id="八、常见错误"><a href="#八、常见错误" class="headerlink" title="八、常见错误"></a>八、常见错误</h2><table>
-<thead>
-<tr>
-<th>错误写法</th>
-<th>问题</th>
-<th>正确做法</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>正文用 <code>#</code> 标题</td>
-<td>与文章标题重复，目录层级混乱</td>
-<td>正文从 <code>##</code> 开始</td>
-</tr>
-<tr>
-<td>代码块不标语言</td>
-<td>不会高亮，阅读吃力</td>
-<td>标注 <code>bash</code>、<code>yaml</code>、<code>js</code> 等</td>
-</tr>
-<tr>
-<td>front-matter 缺 <code>date</code></td>
-<td>文章被生成到错误日期目录</td>
-<td>补上 <code>date</code></td>
-</tr>
-<tr>
-<td>中英文不加空格</td>
-<td>排版拥挤</td>
-<td>中英文之间留一个空格</td>
-</tr>
-<tr>
-<td>用记事本保存 md</td>
-<td>默认 ANSI 编码，中文与 emoji 乱码</td>
-<td>用 VS Code 等编辑器保存为 UTF-8</td>
-</tr>
-</tbody></table>
-<h2 id="九、小结"><a href="#九、小结" class="headerlink" title="九、小结"></a>九、小结</h2><ul>
-<li>front-matter 写全，尤其别漏 <code>date</code></li>
-<li>正文从 <code>##</code> 起，层级不超过四级</li>
-<li>代码块标注语言，表格用标准语法</li>
-<li>中文与英文之间留空格，文件统一 UTF-8</li>
-</ul>
-<p>照这个模板写，文章在 NexT 的 Pisces 布局下会自动获得目录、代码高亮、行号与一致的行距。 🎉</p>
-]]></content>
-      <categories>
-        <category>教程</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>Markdown</tag>
-        <tag>写作规范</tag>
       </tags>
   </entry>
 </search>
