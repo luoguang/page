@@ -2,31 +2,126 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/1970/01/01/hello-world/</loc>
+    <loc>https://luoguang.github.io/page/categories/index.html</loc>
     
-    <lastmod>2020-03-29T15:09:21.982Z</lastmod>
+    <lastmod>2026-10-15</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/03/29/design-blog/</loc>
+    <loc>https://luoguang.github.io/page/tags/index.html</loc>
     
-    <lastmod>2020-03-29T15:09:21.030Z</lastmod>
+    <lastmod>2026-10-15</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yoursite.com/404.html</loc>
+    <loc>https://luoguang.github.io/page/404</loc>
     
-    <lastmod>2020-03-29T14:51:13.902Z</lastmod>
+    <lastmod>2026-10-15</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yoursite.com/about/index.html</loc>
+    <loc>https://luoguang.github.io/page/2020/03/29/design-blog/</loc>
     
-    <lastmod>2020-03-29T12:01:35.101Z</lastmod>
+    <lastmod>2026-10-14</lastmod>
     
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://luoguang.github.io/page/2020/03/29/hello-world/</loc>
+    
+    <lastmod>2026-10-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://luoguang.github.io/page/2026/10/14/markdown-writing-guide/</loc>
+    
+    <lastmod>2026-10-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://luoguang.github.io/page/about/index.html</loc>
+    
+    <lastmod>2020-03-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+
+  <url>
+    <loc>https://luoguang.github.io/page</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  
+  <url>
+    <loc>https://luoguang.github.io/page/tags/Hexo/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://luoguang.github.io/page/tags/NexT/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://luoguang.github.io/page/tags/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://luoguang.github.io/page/tags/Markdown/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://luoguang.github.io/page/tags/%E5%86%99%E4%BD%9C%E8%A7%84%E8%8C%83/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+
+  
+  <url>
+    <loc>https://luoguang.github.io/page/categories/%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://luoguang.github.io/page/categories/%E9%9A%8F%E7%AC%94/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
   </url>
   
 </urlset>
